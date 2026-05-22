@@ -1,15 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akt:wght@100..900&family=Archivo+Black&family=Roboto+Slab:wght@100..900&display=swap');
+
+/* --- АНИМАЦИИ (ВЕРНУЛ ТО, ЧТО БЫЛО ПОТЕРЯНО) --- */
+@keyframes slideDownMonumental {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-    margin: 0;
-    padding: 0;
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
-
-body {
-    font-family: 'Lora', serif;
+    font-family: 'Akt', sans-serif;
     background-color: #ffffff;
     color: #000000;
     margin: 0;
@@ -21,12 +19,13 @@ body {
 header {
     text-align: left;
     padding: 10rem 4rem 8rem 4rem; 
+    animation: slideDownMonumental 1.2s ease-out forwards;
 }
 
 header h1 {
     margin: 0;
     font-size: 5rem;
-    font-weight: 400;
+    font-weight: 300;
     text-transform: lowercase;
     letter-spacing: -1px;
     line-height: 1;
@@ -84,20 +83,49 @@ main {
 }
 
 .monument-title {
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
     text-transform: lowercase;
     margin-top: 0;
     margin-bottom: 8rem;
     letter-spacing: 2px;
     text-align: center;
+    line-height: 3;
+    
+    opacity: 0;
+    animation: slideDownMonumental 1.8s ease-out forwards;
+    animation-delay: 0.8s;
 }
 
-/* ИЛЛЮСТРАЦИЯ */
+/* ИЛЛЮСТРАЦИЯ И ФИЗИКА ЖАЛЮЗИ */
 .monument-artwork {
     max-width: 700px;
     margin: 0 auto 8rem auto;
     box-sizing: border-box;
+}
+
+.image-container {
+    position: relative; 
+}
+
+.blinds-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    pointer-events: none; 
+}
+
+.slat {
+    flex: 1; 
+    background-color: #ffffff; 
+    border-bottom: 2px solid #f0f0f0; 
+    transform-origin: top; 
 }
 
 .monument-artwork img {
@@ -112,23 +140,24 @@ main {
     filter: grayscale(0%);
 }
 
-/* ВЫРАВНИВАНИЕ ПО ЦЕНТРУ И НИЖНИЙ РЕГИСТР */
 .monument-artwork-caption {
     text-align: center;
     font-size: 0.8rem;
-    text-transform: lowercase;
-    font-weight: 400;
     margin-top: 2rem;
     letter-spacing: 1px;
     color: #666666;
 }
 
-/* ПУЛЕНЕПРОБИВАЕМАЯ СЕТКА GRID С ЗАЩИТОЙ ОТ ИСЧЕЗНОВЕНИЯ КОЛОНОК */
+/* ЖЕСТКАЯ СЕТКА GRID */
 .trilingual-block {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 4rem;
     width: 100%;
+    
+    opacity: 0;
+    animation: slideDownMonumental 2.5s ease-out forwards;
+    animation-delay: 1.5s;
 }
 
 .text-column-3 {
@@ -142,11 +171,11 @@ main {
 }
 
 .poem-line {
-    font-size: 1.1rem;
+    font-size: 1.1rem; 
     line-height: 2.2;
     color: #000000;
     margin: 0;
-    font-weight: 400;
+    font-weight: 400; 
 }
 
 .stanza-break {
@@ -210,14 +239,3 @@ footer {
     text-align: center;
     color: #999999;
 }
-
-/* ЖЕСТКАЯ НЕВИДИМАЯ СЕТКА - СТРОГАЯ И ТОНКАЯ */
-.trilingual-block {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5rem;
-    width: 100%;
-}
-
-.text-column-3 {
-    min
