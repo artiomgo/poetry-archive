@@ -85,10 +85,10 @@ main {
 .monument-title {
     font-family: 'Roboto Slab', serif;
     font-size: 1.6rem;
-    font-weight: 900;
+    font-weight: 600;
     text-transform: lowercase;
     margin-top: 0;
-    margin-bottom: 8rem;
+    margin-bottom: 9rem;
     letter-spacing: 2px;
     text-align: center;
     line-height: 3;
@@ -270,5 +270,5 @@ footer {
     .monument-artwork {
         max-width: 90% !important;
     }
-    
+
 }
