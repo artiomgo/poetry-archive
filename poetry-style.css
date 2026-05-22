@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+body {
+    font-family: 'Lora', serif;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    text-align: left;
+    padding: 10rem 4rem 8rem 4rem; 
+}
+
+header h1 {
+    margin: 0;
+    font-size: 5rem;
+    font-weight: 400;
+    text-transform: lowercase;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+header p {
+    font-size: 0.9rem;
+    margin-top: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #666666;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 5rem;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 50px;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
+    border-bottom: 1px solid #000000;
+}
+
+main {
+    max-width: 1600px;
+    margin: 0 auto 15rem auto;
+    padding: 0 4rem;
+    box-sizing: border-box;
+}
+
+/* ПЛИТА БЕЗ ГРАНИЦ */
+.monument-slab {
+    padding: 10rem 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.monument-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    margin-top: 0;
+    margin-bottom: 8rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* ИЛЛЮСТРАЦИЯ */
+.monument-artwork {
+    max-width: 700px;
+    margin: 0 auto 8rem auto;
+    box-sizing: border-box;
+}
+
+.monument-artwork img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.8s ease;
+}
+
+.monument-artwork:hover img {
+    filter: grayscale(0%);
+}
+
+/* ВЫРАВНИВАНИЕ ПО ЦЕНТРУ И НИЖНИЙ РЕГИСТР */
+.monument-artwork-caption {
+    text-align: center;
+    font-size: 0.8rem;
+    text-transform: lowercase;
+    font-weight: 400;
+    margin-top: 2rem;
+    letter-spacing: 1px;
+    color: #666666;
+}
+
+/* ПУЛЕНЕПРОБИВАЕМАЯ СЕТКА GRID С ЗАЩИТОЙ ОТ ИСЧЕЗНОВЕНИЯ КОЛОНОК */
+.trilingual-block {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4rem;
+    width: 100%;
+}
+
+.text-column-3 {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.text-column-3:not(:first-child) {
+    border-left: 1px solid #e0e0e0;
+    padding-left: 4rem;
+}
+
+.poem-line {
+    font-size: 1.1rem;
+    line-height: 2.2;
+    color: #000000;
+    margin: 0;
+    font-weight: 400;
+}
+
+.stanza-break {
+    height: 2.5em;
+    margin: 0;
+}
+
+.monument-epitaph {
+    margin-top: 10rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 600;
+    text-align: center;
+    color: #666666;
+}
+
+/* ИНДЕКС */
+.archive-index {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 8rem;
+}
+
+.archive-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.archive-item a {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #000000;
+    text-decoration: none;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.archive-item a:hover {
+    opacity: 0.5;
+}
+
+.archive-meta {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #999999;
+}
+
+footer {
+    padding: 6rem 4rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-align: center;
+    color: #999999;
+}
+
+/* ЖЕСТКАЯ НЕВИДИМАЯ СЕТКА - СТРОГАЯ И ТОНКАЯ */
+.trilingual-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+    width: 100%;
+}
+
+.text-column-3 {
+    min
