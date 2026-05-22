@@ -301,3 +301,20 @@ footer {
     opacity: 1 !important;
     mix-blend-mode: normal !important;
 }
+/* --- ЖЕЛЕЗОБЕТОННЫЕ ССЫЛКИ НАВИГАЦИИ --- */
+.archive-nav-link {
+    font-family: 'Akt', sans-serif !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 4px !important;
+    color: #000000 !important; 
+    text-decoration: none !important; 
+    border-bottom: 1px solid transparent !important;
+    padding-bottom: 5px !important;
+    transition: all 0.3s ease !important;
+}
+
+.archive-nav-link:hover {
+    color: #666666 !important;
+    border-bottom: 1px solid #666666 !important;
+}
