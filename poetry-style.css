@@ -270,5 +270,28 @@ footer {
     .monument-artwork {
         max-width: 90% !important;
     }
+    /* --- НАВИГАЦИЯ МЕЖДУ ДОКУМЕНТАМИ --- */
+.document-pagination {
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+.next-doc-link {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #000000; /* Жесткий черный цвет, никаких синих ссылок */
+    text-decoration: none; /* Убираем дефолтное подчеркивание */
+    border-bottom: 1px solid transparent; /* Невидимая граница для анимации */
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Эффект при наведении мыши: текст немного бледнеет и появляется тонкая линия */
+.next-doc-link:hover {
+    color: #666666;
+    border-bottom: 1px solid #666666;
+}
 
 }
