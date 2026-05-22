@@ -294,4 +294,10 @@ footer {
     border-bottom: 1px solid #666666;
 }
 
+}/* --- СБРОС ЗАТЕМНЕНИЯ С ИЛЛЮСТРАЦИЙ --- */
+.monument-artwork img, 
+.image-container img {
+    filter: none !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
 }
