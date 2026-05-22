@@ -239,3 +239,36 @@ footer {
     text-align: center;
     color: #999999;
 }
+/* АДАПТАЦИЯ ПОД ТЕЛЕФОН */
+@media (max-width: 768px) {
+    /* Делаем все поля меньше, чтобы сэкономить место */
+    header { padding: 4rem 2rem; }
+    
+    header h1 { font-size: 2.5rem; }
+
+    /* Перестраиваем сетку из 3 колонок в 1 */
+    .trilingual-block {
+        grid-template-columns: 1fr; /* Одна колонка вместо трех */
+        gap: 2rem;
+        padding: 0 2rem;
+        
+    }
+
+    /* Убираем вертикальную черту, так как тексты теперь друг под другом */
+    .text-column-3 {
+        border-left: none !important;
+        padding-left: 0 !important;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 2rem;
+    }
+    /* Скрываем кинематографичный фон на телефонах, чтобы не нагружать процессор */
+    #cinematic-blinds-bg {
+        display: none;
+    }
+    
+    /* Делаем картинку на весь экран */
+    .monument-artwork {
+        max-width: 90% !important;
+    }
+    
+}
