@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Akt:wght@100..900&family=Archivo+Black&family=Roboto+Slab:wght@100..900&display=swap');
 
-/* --- АНИМАЦИИ (ВЕРНУЛ ТО, ЧТО БЫЛО ПОТЕРЯНО) --- */
+/* --- ОБЩИЕ СТИЛИ И АНИМАЦИИ БЛОКОВ --- */
 @keyframes slideDownMonumental {
     0% { transform: translateY(-50px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
@@ -75,7 +75,7 @@ main {
     box-sizing: border-box;
 }
 
-/* ПЛИТА БЕЗ ГРАНИЦ */
+/* --- СТРУКТУРА СТИХА (МОНУМЕНТАЛЬНАЯ ПЛИТА) --- */
 .monument-slab {
     padding: 10rem 0;
     width: 100%;
@@ -98,57 +98,7 @@ main {
     animation-delay: 0.8s;
 }
 
-/* ИЛЛЮСТРАЦИЯ И ФИЗИКА ЖАЛЮЗИ */
-.monument-artwork {
-    max-width: 700px;
-    margin: 0 auto 8rem auto;
-    box-sizing: border-box;
-}
-
-.image-container {
-    position: relative; 
-}
-
-.blinds-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    z-index: 10;
-    pointer-events: none; 
-}
-
-.slat {
-    flex: 1; 
-    background-color: #ffffff; 
-    border-bottom: 2px solid #f0f0f0; 
-    transform-origin: top; 
-}
-
-.monument-artwork img {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: grayscale(100%);
-    transition: filter 0.8s ease;
-}
-
-.monument-artwork:hover img {
-    filter: grayscale(0%);
-}
-
-.monument-artwork-caption {
-    text-align: center;
-    font-size: 0.8rem;
-    margin-top: 2rem;
-    letter-spacing: 1px;
-    color: #666666;
-}
-
-/* ЖЕСТКАЯ СЕТКА GRID */
+/* ТРЕХЪЯЗЫЧНАЯ СЕТКА GRID */
 .trilingual-block {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -193,7 +143,74 @@ main {
     color: #666666;
 }
 
-/* ИНДЕКС */
+/* --- ИЛЛЮСТРАЦИИ, МЕДЛЕННЫЙ ЗУМ И ПРИЦЕЛ --- */
+.monument-artwork {
+    max-width: 700px;
+    margin: 0 auto 8rem auto;
+    box-sizing: border-box;
+}
+
+.image-container {
+    overflow: hidden;
+    position: relative;
+    cursor: none; /* Прячем дефолтный курсор */
+}
+
+.image-container img {
+    /* Тяжелая, кинематографичная анимация наплыва (1.2s) */
+    transition: transform 1.2s ease-in-out, transform-origin 0.1s linear !important; 
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: none !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+    will-change: transform, transform-origin;
+}
+
+/* Базовое увеличение для 1 и 2 страниц (1.4) */
+.image-container:hover img {
+    transform: scale(1.4);
+}
+
+/* Изолированный мягкий зум для 3 и 4 страниц (1.25) */
+.image-container.soft-zoom:hover img {
+    transform: scale(1.25) !important;
+}
+
+.monument-artwork-caption {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    letter-spacing: 1px;
+    color: #666666;
+}
+
+/* СТИЛИЗОВАННЫЙ КУРСОР-ПРИЦЕЛ */
+.image-lens {
+    position: absolute;
+    width: 80px; /* Базовый размер прицела */
+    height: 80px;
+    border: 1px solid rgba(0, 0, 0, 0.4); 
+    box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.03); 
+    background: rgba(255, 255, 255, 0.05); 
+    pointer-events: none; 
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+/* Маленький прицел для 3 и 4 страниц */
+.image-container.soft-zoom .image-lens {
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.image-container:hover .image-lens {
+    opacity: 1; 
+}
+
+/* --- ГЛАВНЫЙ ИНДЕКС --- */
 .archive-index {
     list-style-type: none;
     padding: 0;
@@ -230,78 +247,7 @@ main {
     color: #999999;
 }
 
-footer {
-    padding: 6rem 4rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 600;
-    text-align: center;
-    color: #999999;
-}
-/* АДАПТАЦИЯ ПОД ТЕЛЕФОН */
-@media (max-width: 768px) {
-    /* Делаем все поля меньше, чтобы сэкономить место */
-    header { padding: 4rem 2rem; }
-    
-    header h1 { font-size: 2.5rem; }
-
-    /* Перестраиваем сетку из 3 колонок в 1 */
-    .trilingual-block {
-        grid-template-columns: 1fr; /* Одна колонка вместо трех */
-        gap: 2rem;
-        padding: 0 2rem;
-        
-    }
-
-    /* Убираем вертикальную черту, так как тексты теперь друг под другом */
-    .text-column-3 {
-        border-left: none !important;
-        padding-left: 0 !important;
-        border-bottom: 1px solid #e0e0e0;
-        padding-bottom: 2rem;
-    }
-    /* Скрываем кинематографичный фон на телефонах, чтобы не нагружать процессор */
-    #cinematic-blinds-bg {
-        display: none;
-    }
-    
-    /* Делаем картинку на весь экран */
-    .monument-artwork {
-        max-width: 90% !important;
-    }
-    /* --- НАВИГАЦИЯ МЕЖДУ ДОКУМЕНТАМИ --- */
-.document-pagination {
-    text-align: center;
-    margin-top: 5rem;
-    margin-bottom: 3rem;
-}
-
-.next-doc-link {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: #000000; /* Жесткий черный цвет, никаких синих ссылок */
-    text-decoration: none; /* Убираем дефолтное подчеркивание */
-    border-bottom: 1px solid transparent; /* Невидимая граница для анимации */
-    padding-bottom: 4px;
-    transition: all 0.3s ease;
-}
-
-/* Эффект при наведении мыши: текст немного бледнеет и появляется тонкая линия */
-.next-doc-link:hover {
-    color: #666666;
-    border-bottom: 1px solid #666666;
-}
-
-}/* --- СБРОС ЗАТЕМНЕНИЯ С ИЛЛЮСТРАЦИЙ --- */
-.monument-artwork img, 
-.image-container img {
-    filter: none !important;
-    opacity: 1 !important;
-    mix-blend-mode: normal !important;
-}
-/* --- ЖЕЛЕЗОБЕТОННЫЕ ССЫЛКИ НАВИГАЦИИ --- */
+/* --- ССЫЛКИ СКВОЗНОЙ НАВИГАЦИИ ПОД ЭПИТАФИЕЙ --- */
 .archive-nav-link {
     font-family: 'Akt', sans-serif !important;
     font-size: 0.75rem !important;
@@ -318,52 +264,36 @@ footer {
     color: #666666 !important;
     border-bottom: 1px solid #666666 !important;
 }
-/* --- ЭФФЕКТ ЛУПЫ И КУРСОР --- */
-.image-container {
-    overflow: hidden;
-    position: relative;
-    cursor: none; 
+
+footer {
+    padding: 6rem 4rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-align: center;
+    color: #999999;
 }
 
-.image-container img {
-    transition: transform 0.5s ease-in-out, transform-origin 0.1s ease-out; 
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform-origin: center center;
-    will-change: transform, transform-origin; 
-}
+/* --- АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ --- */
+@media (max-width: 768px) {
+    header { padding: 4rem 2rem; }
+    header h1 { font-size: 2.5rem; }
 
-/* СТАНДАРТНЫЙ ЗУМ (Для страниц 1, 2 и 4) */
-.image-container:hover img {
-    transform: scale(1.4); 
-}
+    .trilingual-block {
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+        padding: 0 2rem;
+    }
 
-/* ИНДИВИДУАЛЬНЫЙ МЯГКИЙ ЗУМ (Для 3 страницы) */
-.image-container.soft-zoom:hover img {
-    transform: scale(1.25); 
-}
-
-/* --- СТИЛИЗОВАННЫЙ КУРСОР-ПРИЦЕЛ --- */
-.image-lens {
-    position: absolute;
-    width: 80px; /* Стандартный размер прицела */
-    height: 80px;
-    border: 1px solid rgba(0, 0, 0, 0.4); 
-    box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.03); 
-    background: rgba(255, 255, 255, 0.05); 
-    pointer-events: none; 
-    opacity: 0; 
-    transition: opacity 0.3s ease;
-    z-index: 10;
-}
-
-/* Уменьшенный прицел для 3 страницы */
-.image-container.soft-zoom .image-lens {
-    width: 60px;
-    height: 60px;
-}
-
-.image-container:hover .image-lens {
-    opacity: 1; 
+    .text-column-3 {
+        border-left: none !important;
+        padding-left: 0 !important;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 2rem;
+    }
+    
+    .monument-artwork {
+        max-width: 90% !important;
+    }
 }
