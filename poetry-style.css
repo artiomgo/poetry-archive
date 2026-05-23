@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Akt:wght@100..900&family=Archivo+Black&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap'); /* Подключили Prata */
 
+/* --- ОБЩИЕ СТИЛИ И АНИМАЦИИ БЛОКОВ --- */
 /* --- ОБЩИЕ СТИЛИ И АНИМАЦИИ БЛОКОВ --- */
 @keyframes slideDownMonumental {
     0% { transform: translateY(-50px); opacity: 0; }
