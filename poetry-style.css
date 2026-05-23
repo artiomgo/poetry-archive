@@ -276,24 +276,67 @@ footer {
 }
 
 /* --- АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ --- */
+/* --- АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ --- */
 @media (max-width: 768px) {
-    header { padding: 4rem 2rem; }
-    header h1 { font-size: 2.5rem; }
+    main { padding: 0 1.5rem; }
+    header { padding: 4rem 1.5rem; }
+    header h1 { font-size: 3.5rem; }
+
+    .monument-title {
+        font-size: 1.1rem;
+        line-height: 2.2;
+        margin-bottom: 5rem;
+        padding: 0;
+        word-wrap: break-word; 
+    }
+
+    .monument-artwork {
+        max-width: 100% !important; 
+        margin-bottom: 5rem;
+    }
+
+    .archive-item {
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 1rem; 
+        padding: 2.5rem 0;
+    }
+    
+    .archive-item a {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
 
     .trilingual-block {
         grid-template-columns: 1fr; 
-        gap: 2rem;
-        padding: 0 2rem;
+        gap: 4rem;
+        padding: 0;
     }
 
     .text-column-3 {
         border-left: none !important;
         padding-left: 0 !important;
         border-bottom: 1px solid #e0e0e0;
-        padding-bottom: 2rem;
+        padding-bottom: 3rem;
     }
     
-    .monument-artwork {
-        max-width: 90% !important;
+    .text-column-3:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .archive-nav-link {
+        font-size: 0.85rem !important;
+    }
+
+    div[style*="display: flex; justify-content: center;"] {
+        gap: 2rem !important; 
+    }
+
+    /* НОВЫЙ БЛОК ДЛЯ ЧИТАЕМОСТИ СТИХОВ */
+    .poem-line {
+        font-size: 1rem; 
+        line-height: 1.5; 
+        margin-bottom: 0.8rem; 
     }
 }
