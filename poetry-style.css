@@ -318,45 +318,52 @@ footer {
     color: #666666 !important;
     border-bottom: 1px solid #666666 !important;
 }
-/* --- ОБНОВЛЕННЫЙ ЭФФЕКТ ЛУПЫ И КУРСОР --- */
+/* --- ЭФФЕКТ ЛУПЫ И КУРСОР --- */
 .image-container {
     overflow: hidden;
     position: relative;
-    cursor: none; /* Полностью скрываем дефолтный курсор браузера */
+    cursor: none; 
 }
 
 .image-container img {
-    /* Физика стала мягче (0.5s) и плавнее (ease-in-out) */
     transition: transform 0.5s ease-in-out, transform-origin 0.1s ease-out; 
     width: 100%;
     height: 100%;
     object-fit: cover;
     transform-origin: center center;
-    will-change: transform, transform-origin; /* Оптимизация для браузера */
+    will-change: transform, transform-origin; 
 }
 
-/* Увеличение стало не таким сильным (1.4 вместо 2) */
+/* СТАНДАРТНЫЙ ЗУМ (Для страниц 1, 2 и 4) */
 .image-container:hover img {
     transform: scale(1.4); 
 }
 
-/* --- СТИЛИЗОВАННЫЙ КУРСОР-ПРИЦЕЛ (ЛИНЗА) --- */
+/* ИНДИВИДУАЛЬНЫЙ МЯГКИЙ ЗУМ (Для 3 страницы) */
+.image-container.soft-zoom:hover img {
+    transform: scale(1.25); 
+}
+
+/* --- СТИЛИЗОВАННЫЙ КУРСОР-ПРИЦЕЛ --- */
 .image-lens {
     position: absolute;
-    width: 80px; /* Размер квадратного окна просмотра */
+    width: 80px; /* Стандартный размер прицела */
     height: 80px;
-    border: 1px solid rgba(0, 0, 0, 0.4); /* Тонкая черная архивная рамка */
-    box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.03); /* Легчайшее затемнение вокруг */
-    background: rgba(255, 255, 255, 0.05); /* Легкий блик внутри линзы */
-    pointer-events: none; /* Пропускает клики сквозь себя */
-    opacity: 0; /* Изначально скрыт */
+    border: 1px solid rgba(0, 0, 0, 0.4); 
+    box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.03); 
+    background: rgba(255, 255, 255, 0.05); 
+    pointer-events: none; 
+    opacity: 0; 
     transition: opacity 0.3s ease;
     z-index: 10;
-    
-    /* Делаем квадратный прицел */
-    backdrop-filter: blur(0px); /* Можно добавить легкий blur, если хочется */
+}
+
+/* Уменьшенный прицел для 3 страницы */
+.image-container.soft-zoom .image-lens {
+    width: 60px;
+    height: 60px;
 }
 
 .image-container:hover .image-lens {
-    opacity: 1; /* Появляется при наведении */
+    opacity: 1; 
 }
