@@ -318,3 +318,23 @@ footer {
     color: #666666 !important;
     border-bottom: 1px solid #666666 !important;
 }
+/* --- ЭФФЕКТ ЛУПЫ ДЛЯ ИЛЛЮСТРАЦИЙ --- */
+.image-container {
+    overflow: hidden; /* Прячем всё, что выходит за рамки при увеличении */
+    position: relative;
+    cursor: zoom-in; /* Меняем курсор на лупу с плюсиком */
+}
+
+.image-container img {
+    transition: transform 0.2s ease-out; /* Плавный старт увеличения */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: center center; /* Изначальная точка фокуса */
+}
+
+/* При наведении увеличиваем картину в 2 раза. 
+   Масштаб (2) можно поменять на 1.5 или 2.5 по вкусу */
+.image-container:hover img {
+    transform: scale(2); 
+}
