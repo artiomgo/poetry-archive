@@ -70,6 +70,31 @@ nav ul li a {
 nav ul li a:hover {
     border-bottom: 1px solid #000000;
 }
+/* --- АУДИО КНОПКА (В правом верхнем углу) --- */
+.audio-btn {
+    position: absolute; /* Вырываем кнопку из общего текста */
+    top: 4rem; /* Отступ сверху */
+    right: 4rem; /* Отступ справа */
+    background: none;
+    border: none;
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.75rem; /* Делаем шрифт еще меньше */
+    color: #999999; /* Делаем ее бледно-серой, чтобы не бросалась в глаза */
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0;
+    transition: color 0.5s ease;
+    z-index: 100; /* Гарантируем, что она будет поверх всего */
+}
+
+.audio-btn:hover {
+    color: #000000;
+}
+
+.audio-btn:hover {
+    color: #000000;
+}
 
 main {
     max-width: 1600px;
@@ -348,4 +373,150 @@ footer {
         line-height: 1.5; 
         margin-bottom: 0.8rem; 
     }
+    /* Корректировка кнопки звука для узких экранов */
+    .audio-btn {
+        top: 2rem;
+        right: 1.5rem;
+    }
+    
+}
+.audio-archive {
+    margin: 4rem 0 0 0; /* Отступ только сверху, снизу поджимает навигация */
+    display: flex;
+    flex-direction: column; /* Выстраиваем элементы в колонку */
+    align-items: center; /* Центрируем всё по горизонтали */
+    text-align: center; /* Центрируем сам текст треков */
+    font-family: 'Roboto Slab', serif;
+}
+
+.audio-title {
+    font-size: 0.75rem;
+    color: #999999;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+}
+
+.audio-list {
+    list-style: none; /* Эта строчка убивает черные точки */
+    padding: 0;
+    margin: 0;
+}
+
+.audio-list li {
+    font-size: 0.9rem;
+    color: #666666;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.audio-list li:hover {
+    color: #000000;
+}
+
+.audio-list li.active-track {
+    color: #000000;
+    font-weight: 600;
+}
+/* --- МИНИМАЛИСТИЧНЫЙ ПЛЕЕР (ЦЕНТРИРОВАННЫЙ) --- */
+.minimal-player {
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 250px; /* Жестко ограничиваем ширину полоски */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем таймер под полоской */
+}
+
+.progress-container {
+    width: 100%;
+    height: 10px; /* Зона для удобного клика */
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Сама тонкая линия */
+.progress-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.progress-bar {
+    height: 1px;
+    background-color: #000000;
+    width: 0%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: width 0.1s linear;
+}
+
+.time-display {
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.65rem;
+    color: #999999;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+/* --- ЭЛЕМЕНТЫ УПРАВЛЕНИЯ ПЛЕЕРОМ (ПАУЗА И ГРОМКОСТЬ) --- */
+.player-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.65rem;
+    color: #999999;
+    letter-spacing: 1px;
+}
+
+.control-btn {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.control-btn:hover {
+    color: #000000;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.volume-slider {
+    width: 50px; /* Длина полоски громкости */
+    height: 10px; /* Невидимая зона для удобного клика */
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.volume-slider::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.volume-level {
+    height: 1px;
+    background-color: #000000;
+    width: 50%; /* Дефолтное значение */
+    position: absolute;
+    pointer-events: none;
+    transition: width 0.1s linear;
 }

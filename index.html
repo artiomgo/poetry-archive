@@ -6,60 +6,94 @@
     <title>Archivio</title>
     <link rel="stylesheet" href="poetry-style.css">
 </head>
-<header>
-        
-        <p>Artemij Gorynin</p>
-    </header>
 <body>
+    <button id="audio-toggle" class="audio-btn">sound: off</button>
+
     <header>
         <h1>archive/архив</h1>
         <p>Registro documentario dei testi e delle traduzioni</p>
+        
+        <div class="audio-archive">
+            <h3 class="audio-title">registro sonoro</h3>
+            <ul id="audio-tracklist" class="audio-list">
+                <li data-src="assets/ambient-index.wav" class="active-track">01. rec 01 / voices of the silence</li>
+                <li data-src="assets/ambient1.wav">02. rec 02 / awareness of the moment</li>
+                <li data-src="assets/ambient2.wav">03. rec 03 / judgment hour</li>
+                <li data-src="assets/ambient4.wav">04. rec 04 / epitaph</li>
+            </ul>
+
+            <div class="minimal-player">
+                <div class="progress-container" id="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="time-display">
+                    <span id="time-current">00:00</span> / <span id="time-total">00:00</span>
+                </div>
+                
+                <div class="player-controls">
+                    <span id="play-pause-btn" class="control-btn">pause</span>
+                    <div class="volume-control">
+                        <span class="vol-label">vol</span>
+                        <div class="volume-slider" id="volume-slider">
+                            <div class="volume-level" id="volume-level"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <nav>
             <ul>
                 <li><a href="index.html">Indice</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <ul class="archive-index">
-    
-    <li class="archive-item">
-        <a href="soffitto.html">01. l'ennesimo soffitto/очередной потолок</a>
-        <span class="archive-meta">pennarelli ad alcool su carta / perugia — 2025</span>
-    </li>
-
-    <li class="archive-item">
-        <a href="soffitto2.html">02. scrutare i volti / заглядывать в лица</a>
-        <span class="archive-meta">olio su tela / perugia — 2025</span>
-    </li>
-    <li class="archive-item">
-                <a href="soffitto3.html">03. arriveranno i postumi / похмелье наступит</a>
-                <span class="archive-meta">digital art / perugia— 2025</span>
+            <li class="archive-item">
+                <a href="soffitto.html">01. l'ennesimo soffitto/очередной потолок</a>
+                <span class="archive-meta">pennarelli ad alcool su carta / perugia — 2025</span>
             </li>
             <li class="archive-item">
-        <a href="soffitto4.html">04. la sensazione di immortalità / ощущение бессмертия</a>
-        <span class="archive-meta">mixed media / perugia,belgrade — 2025</span>
-    </li>
-    <li class="archive-item">
-        <a href="soffitto5.html">05. svegliarsi con il pensiero / просыпаться с мыслью</a>
-        <span class="archive-meta">matita su carta / perugia — 2025</span>
-    </li>
-    <li class="archive-item">
-        <a href="soffitto6.html">06. зачем мне думать о себе / why think of myself</a>
-        <span class="archive-meta">matita su carta / perugia, napoli — 2025</span>
-    </li>
-        <li class="archive-item">
-            <a href="soffitto7.html">07. guardare un po' più su dei tetti / смотреть чуть выше крыш домов</a>
-            <span class="archive-meta">matita su carta / perugia — 2026</span>
-        </li>
-        <li class="archive-item">
-            <a href="soffitto8.html">08. il presente stringe il passato / настоящее держит прошлое крепче</a>
-            <span class="archive-meta">pennarelli ad alcool e grafite / perugia — 2026</span>
-        </li>
-</ul>
+                <a href="soffitto2.html">02. scrutare i volti / заглядывать в лица</a>
+                <span class="archive-meta">olio su tela / perugia — 2025</span>
+            </li>
+            <li class="archive-item">
+                <a href="soffitto3.html">03. arriveranno i postumi / похмелье наступит</a>
+                <span class="archive-meta">pennarelli ad alcool e pastelli / perugia— 2025</span>
+            </li>
+            <li class="archive-item">
+                <a href="soffitto4.html">04. la sensazione di immortalità / ощущение бессмертия</a>
+                <span class="archive-meta">mixed media / perugia, belgrade — 2025</span>
+            </li>
+            <li class="archive-item">
+                <a href="soffitto5.html">05. svegliarsi con il pensiero / просыпаться с мыслью</a>
+                <span class="archive-meta">matita su carta / perugia — 2025</span>
+            </li>
+            <li class="archive-item">
+                <a href="soffitto6.html">06. why think of myself / зачем мне думать о себе</a>
+                <span class="archive-meta">matita su carta / perugia, napoli — 2025</span>
+            </li>
+            <li class="archive-item">
+                <a href="soffitto7.html">07. guardare un po' più su dei tetti / смотреть чуть выше крыш домов</a>
+                <span class="archive-meta">matita su carta / perugia — 2026</span>
+            </li>
+            <li class="archive-item">
+                <a href="soffitto8.html">08. il presente stringe il passato / настоящее держит прошлое крепче</a>
+                <span class="archive-meta">pennarelli ad alcool e grafite / perugia — 2026</span>
+            </li>
+        </ul>
     </main>
+
     <footer>
-        <p>© 2026  — PERSONAL ARCHIVE OF ARTEMIJ GORYNIN - ALL RIGHTS RESERVED
+        <p>© 2026 — PERSONAL ARCHIVE OF ARTEMIJ GORYNIN - ALL RIGHTS RESERVED</p>
     </footer>
+
+    <script src="script.js"></script>
+
+    <audio id="archive-audio" loop>
+        <source src="assets/ambient-index.wav" type="audio/wav">
+    </audio>
 </body>
 </html>
