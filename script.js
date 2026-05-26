@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // --- 5. ПЕРЕМОТКА И ТАЙМЕРЫ ---
+
         const formatTime = (time) => {
             if (isNaN(time)) return "00:00";
             const minutes = Math.floor(time / 60);
@@ -166,8 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 audio.currentTime = clickPercent * audio.duration;
             });
         }
-
-        // --- 6. ПОЛЗУНОК ГРОМКОСТИ ---
         if (volumeSlider) {
             volumeSlider.addEventListener('click', (e) => {
                 const rect = volumeSlider.getBoundingClientRect();
