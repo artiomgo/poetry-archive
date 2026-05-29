@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap'); /* Подключили Prata */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap'); /* Подключили Lora */
 
-/* --- ОБЩИЕ СТИЛИ И АНИМАЦИИ БЛОКОВ --- */
-/* --- ОБЩИЕ СТИЛИ И АНИМАЦИИ БЛОКОВ --- */
 @keyframes slideDownMonumental {
     0% { transform: translateY(-50px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
@@ -70,22 +68,21 @@ nav ul li a {
 nav ul li a:hover {
     border-bottom: 1px solid #000000;
 }
-/* --- АУДИО КНОПКА (В правом верхнем углу) --- */
 .audio-btn {
-    position: absolute; /* Вырываем кнопку из общего текста */
-    top: 4rem; /* Отступ сверху */
-    right: 4rem; /* Отступ справа */
+    position: absolute;
+    top: 4rem; 
+    right: 4rem; 
     background: none;
     border: none;
     font-family: 'Roboto Slab', serif;
-    font-size: 0.75rem; /* Делаем шрифт еще меньше */
-    color: #999999; /* Делаем ее бледно-серой, чтобы не бросалась в глаза */
+    font-size: 0.75rem; 
+    color: #999999; 
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 0;
     transition: color 0.5s ease;
-    z-index: 100; /* Гарантируем, что она будет поверх всего */
+    z-index: 100; 
 }
 
 .audio-btn:hover {
@@ -103,7 +100,6 @@ main {
     box-sizing: border-box;
 }
 
-/* --- СТРУКТУРА СТИХА (МОНУМЕНТАЛЬНАЯ ПЛИТА) --- */
 .monument-slab {
     padding: 10rem 0;
     width: 100%;
@@ -124,7 +120,6 @@ main {
     
 }
 
-/* ТРЕХЪЯЗЫЧНАЯ СЕТКА GRID */
 .trilingual-block {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -176,7 +171,6 @@ main {
     color: #666666;
 }
 
-/* --- ИЛЛЮСТРАЦИИ, МЕДЛЕННЫЙ ЗУМ И ПРИЦЕЛ --- */
 .monument-artwork {
     max-width: 700px;
     margin: 0 auto 8rem auto;
@@ -190,7 +184,6 @@ main {
 }
 
 .image-container img {
-    /* Тяжелая, кинематографичная анимация наплыва (1.2s) */
     transition: transform 1.2s ease-in-out, transform-origin 0.1s linear !important; 
     width: 100%;
     height: auto;
@@ -201,12 +194,10 @@ main {
     will-change: transform, transform-origin;
 }
 
-/* Базовое увеличение для 1 и 2 страниц (1.4) */
 .image-container:hover img {
     transform: scale(1.4);
 }
 
-/* Изолированный мягкий зум для 3 и 4 страниц (1.25) */
 .image-container.soft-zoom:hover img {
     transform: scale(1.25) !important;
 }
@@ -219,10 +210,9 @@ main {
     color: #666666;
 }
 
-/* СТИЛИЗОВАННЫЙ КУРСОР-ПРИЦЕЛ */
 .image-lens {
     position: absolute;
-    width: 80px; /* Базовый размер прицела */
+    width: 80px;
     height: 80px;
     border: 1px solid rgba(0, 0, 0, 0.4); 
     box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.03); 
@@ -233,7 +223,6 @@ main {
     z-index: 10;
 }
 
-/* Маленький прицел для 3 и 4 страниц */
 .image-container.soft-zoom .image-lens {
     width: 60px !important;
     height: 60px !important;
@@ -243,7 +232,6 @@ main {
     opacity: 1; 
 }
 
-/* --- ГЛАВНЫЙ ИНДЕКС --- */
 .archive-index {
     list-style-type: none;
     padding: 0;
@@ -280,7 +268,6 @@ main {
     color: #999999;
 }
 
-/* --- ССЫЛКИ СКВОЗНОЙ НАВИГАЦИИ ПОД ЭПИТАФИЕЙ --- */
 .archive-nav-link {
     font-family: 'Akt', sans-serif !important;
     font-size: 0.75rem !important;
@@ -308,8 +295,6 @@ footer {
     color: #999999;
 }
 
-/* --- АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ --- */
-/* --- АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ --- */
 @media (max-width: 768px) {
     main { padding: 0 1.5rem; }
     header { padding: 4rem 1.5rem; }
@@ -367,13 +352,13 @@ footer {
         gap: 2rem !important; 
     }
 
-    /* НОВЫЙ БЛОК ДЛЯ ЧИТАЕМОСТИ СТИХОВ */
+
     .poem-line {
         font-size: 1rem; 
         line-height: 1.5; 
         margin-bottom: 0.8rem; 
     }
-    /* Корректировка кнопки звука для узких экранов */
+
     .audio-btn {
         top: 2rem;
         right: 1.5rem;
@@ -381,11 +366,11 @@ footer {
     
 }
 .audio-archive {
-    margin: 4rem 0 0 0; /* Отступ только сверху, снизу поджимает навигация */
+    margin: 4rem 0 0 0; 
     display: flex;
-    flex-direction: column; /* Выстраиваем элементы в колонку */
-    align-items: center; /* Центрируем всё по горизонтали */
-    text-align: center; /* Центрируем сам текст треков */
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
     font-family: 'Roboto Slab', serif;
 }
 
@@ -399,7 +384,7 @@ footer {
 }
 
 .audio-list {
-    list-style: none; /* Эта строчка убивает черные точки */
+    list-style: none; 
     padding: 0;
     margin: 0;
 }
@@ -420,19 +405,18 @@ footer {
     color: #000000;
     font-weight: 600;
 }
-/* --- МИНИМАЛИСТИЧНЫЙ ПЛЕЕР (ЦЕНТРИРОВАННЫЙ) --- */
 .minimal-player {
     margin-top: 1.5rem;
     width: 100%;
-    max-width: 250px; /* Жестко ограничиваем ширину полоски */
+    max-width: 250px; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем таймер под полоской */
+    align-items: center; 
 }
 
 .progress-container {
     width: 100%;
-    height: 10px; /* Зона для удобного клика */
+    height: 10px; 
     background-color: transparent;
     cursor: pointer;
     position: relative;
@@ -440,7 +424,6 @@ footer {
     align-items: center;
 }
 
-/* Сама тонкая линия */
 .progress-container::before {
     content: '';
     position: absolute;
@@ -467,7 +450,6 @@ footer {
     margin-top: 0.5rem;
     letter-spacing: 1px;
 }
-/* --- ЭЛЕМЕНТЫ УПРАВЛЕНИЯ ПЛЕЕРОМ (ПАУЗА И ГРОМКОСТЬ) --- */
 .player-controls {
     display: flex;
     justify-content: space-between;
@@ -496,8 +478,8 @@ footer {
 }
 
 .volume-slider {
-    width: 50px; /* Длина полоски громкости */
-    height: 10px; /* Невидимая зона для удобного клика */
+    width: 50px; 
+    height: 10px; 
     position: relative;
     cursor: pointer;
     display: flex;
@@ -515,8 +497,143 @@ footer {
 .volume-level {
     height: 1px;
     background-color: #000000;
-    width: 50%; /* Дефолтное значение */
+    width: 50%; 
     position: absolute;
     pointer-events: none;
     transition: width 0.1s linear;
+}
+
+.global-audio-bar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 320px;
+    max-height: 38px;
+    
+    background-color: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(8px);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    border: 1px solid transparent;
+    
+    z-index: 9999;
+    font-family: 'Roboto Slab', serif;
+    box-sizing: border-box;
+    overflow: hidden !important; 
+    
+    transition: width 0.4s ease, max-height 0.5s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.global-audio-bar.expanded {
+    width: 420px; 
+    max-height: 500px; 
+    background-color: rgba(255, 255, 255, 1); 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    border-color: #f0f0f0;
+    border-top: none;
+}
+
+.audio-bar-header {
+    cursor: pointer;
+    position: relative;
+    height: 38px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap; 
+    transition: height 0.4s ease;
+}
+
+.global-audio-bar.expanded .audio-bar-header {
+    height: 55px; 
+}
+
+.audio-progress-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+}
+
+.audio-progress-bar {
+    height: 2px;
+    background-color: #000000;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.audio-bar-status {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.audio-bar-header:hover .audio-bar-status {
+    color: #000000;
+}
+
+.toggle-icon {
+    font-size: 0.8rem;
+    display: inline-block; 
+    transition: transform 0.4s ease;
+}
+
+.global-audio-bar.expanded .toggle-icon {
+    transform: rotate(180deg); 
+}
+
+.audio-bar-dropdown {
+    opacity: 0;
+    width: 100%;
+    pointer-events: none; 
+    transition: opacity 0.3s ease;
+}
+
+.global-audio-bar.expanded .audio-bar-dropdown {
+    opacity: 1;
+    pointer-events: auto; 
+}
+
+.global-list {
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.global-list li {
+    font-size: 0.75rem; 
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px; 
+    color: #888888;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.global-list li:hover, .global-list li.active-track {
+    color: #000000;
+    font-weight: 700;
+}
+
+.global-controls {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem; 
+    font-size: 0.65rem; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000000;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 2.5rem;
 }

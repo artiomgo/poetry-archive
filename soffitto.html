@@ -6,7 +6,46 @@
     <title>01. L'ennesimo soffitto - Archivio</title>
     <link rel="stylesheet" href="poetry-style.css">
 </head>
+
 <body>
+    <div class="global-audio-bar" id="global-audio-bar">
+        <div class="audio-bar-header" id="audio-bar-toggle">
+            <div class="audio-progress-container" id="progress-container">
+                <div class="audio-progress-bar" id="progress-bar"></div>
+            </div>
+            
+            <div class="audio-bar-status">
+                <span id="global-status-text">registro sonoro / sound: off</span>
+                <span class="toggle-icon">▾</span>
+            </div>
+        </div>
+
+  <div class="audio-bar-dropdown"></div>
+            <ul id="audio-tracklist" class="audio-list global-list">
+                <li data-src="assets/ambient-index.wav" class="active-track">rec. 01 / voices in the silence</li>
+                <li data-src="assets/ambient1.mp3">rec. 02 / awareness of the moment</li>
+                <li data-src="assets/ambient5.mp3">rec. 03 / windborne omen</li>
+                <li data-src="assets/ambient6.mp3">rec. 04 / judgment hour</li>
+                <li data-src="assets/ambient4.wav">rec. 05 / epitaph</li>
+            </ul>
+            </ul>
+
+
+            <div class="global-controls">
+                <span id="play-pause-btn" class="control-btn">play</span>
+                <div class="time-display">
+                    <span id="time-current">00:00</span> / <span id="time-total">00:00</span>
+                </div>
+                <div class="volume-control">
+                    <span class="vol-label">vol</span>
+                    <div class="volume-slider" id="volume-slider">
+                        <div class="volume-level" id="volume-level"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header>
         <h1>documento<br>reg. 01</h1>
         <p>Struttura trilingue parallela</p>
@@ -16,6 +55,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <div class="monument-slab">
             
@@ -136,21 +176,29 @@
                     
                     <p class="poem-line">the warmth, just like the light that dragged on every day,</p>
                     <p class="poem-line">will be carelessly replaced by a ghost in the hallway.</p>
-                </div> </div> <div style="text-align: center; margin-top: 8rem; margin-bottom: 4rem;">
-                
+                </div> 
+            </div> 
+
+            <div style="text-align: center; margin-top: 8rem; margin-bottom: 4rem;">
                 <div class="monument-epitaph">2025 — PERUGIA</div>
 
-            <div style="display: flex; justify-content: center; gap: 4rem; margin-top: 5rem; margin-bottom: 4rem;">
-                <a href="index.html" class="archive-nav-link">← индекс</a>
-                <a href="soffitto2.html" class="archive-nav-link">следующий doc. 02 →</a>
-            </div>
-
-        </div> </main>
+                <div style="display: flex; justify-content: center; gap: 4rem; margin-top: 5rem; margin-bottom: 4rem;">
+                    <a href="index.html" class="archive-nav-link">← индекс</a>
+                    <a href="soffitto2.html" class="archive-nav-link">следующий doc. 02 →</a>
+                </div>
+            </div> 
+        </div> 
+    </main>
+    
     <footer>
-        <p>© 2026  — PERSONAL ARCHIVE OF ARTEMIJ GORYNIN - ALL RIGHTS RESERVED
+        <p>© 2026 — PERSONAL ARCHIVE OF ARTEMIJ GORYNIN - ALL RIGHTS RESERVED</p>
     </footer>
+    
+    <script src="script.js"></script>
+
+    <audio id="archive-audio">
+        <source src="assets/ambient-index.wav" type="audio/wav">
+    </audio>
+
 </body>
-
-            </div>
-
-        </div> </main>
+</html>

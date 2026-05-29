@@ -7,6 +7,43 @@
     <link rel="stylesheet" href="poetry-style.css">
 </head>
 <body>
+
+    <div class="global-audio-bar" id="global-audio-bar">
+        <div class="audio-bar-header" id="audio-bar-toggle">
+            <div class="audio-progress-container" id="progress-container">
+                <div class="audio-progress-bar" id="progress-bar"></div>
+            </div>
+            
+            <div class="audio-bar-status">
+                <span id="global-status-text">registro sonoro / sound: off</span>
+                <span class="toggle-icon">▾</span>
+            </div>
+        </div>
+
+            <div class="audio-bar-dropdown"></div>
+            <ul id="audio-tracklist" class="audio-list global-list">
+                <li data-src="assets/ambient-index.wav" class="active-track">rec. 01 / voices in the silence</li>
+                <li data-src="assets/ambient1.mp3">rec. 02 / awareness of the moment</li>
+                <li data-src="assets/ambient5.mp3">rec. 03 / windborne omen</li>
+                <li data-src="assets/ambient6.mp3">rec. 04 / judgment hour</li>
+                <li data-src="assets/ambient4.wav">rec. 05 / epitaph</li>
+            </ul>
+            </ul>
+
+            <div class="global-controls">
+                <span id="play-pause-btn" class="control-btn">play</span>
+                <div class="time-display">
+                    <span id="time-current">00:00</span> / <span id="time-total">00:00</span>
+                </div>
+                <div class="volume-control">
+                    <span class="vol-label">vol</span>
+                    <div class="volume-slider" id="volume-slider">
+                        <div class="volume-level" id="volume-level"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <header>
         <h1>documento<br>reg. 03</h1>
         <p>Struttura trilingue — pennarelli ad alcool e pastelli</p>
@@ -81,5 +118,9 @@
     <footer>
         <p>© 2026  — PERSONAL ARCHIVE OF ARTEMIJ GORYNIN - ALL RIGHTS RESERVED
     </footer>
+    <script src="script.js"></script>
+  <audio id="archive-audio">
+        <source src="assets/ambient-index.wav" type="audio/wav">
+    </audio>
 </body>
                 
