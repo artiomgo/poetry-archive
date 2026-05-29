@@ -180,7 +180,7 @@ main {
 .image-container {
     overflow: hidden;
     position: relative;
-    cursor: none; /* Прячем дефолтный курсор */
+    cursor: none;
 }
 
 .image-container img {
