@@ -722,9 +722,21 @@ footer {
     width: 100%;
     margin-top: 8vh;
     margin-bottom: 4rem;
-    font-family: 'Prata', serif; /* Используем элегантный шрифт с засечками */
-    font-weight: 400; /* Одинаковая толщина */
-    font-size: 1.6rem; /* Идеальный размер, подбери если нужен больше/меньше */
+    font-family: 'Prata', serif; 
+    font-weight: 400; 
+    font-size: 1.6rem; 
     letter-spacing: 0.1em;
     color: #000000;
+}@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem; 
+        margin-top: 3rem;
+    }
+
+    nav ul li {
+        margin-right: 0; 
+        display: block;
+    }
 }
