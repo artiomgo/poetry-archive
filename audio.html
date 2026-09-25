@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio / Archive</title>
+    <link rel="stylesheet" href="poetry-style.css">
+    <style>
+        .audio-room-container {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5vh;
+            margin-bottom: 15vh;
+            animation: slideDownMonumental 1.5s ease-out forwards;
+        }
+        
+        .audio-room-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #000;
+            margin-bottom: 5rem;
+            font-weight: 300;
+        }
+        
+    
+        .audio-room-list {
+            margin-bottom: 6rem;
+            text-align: center;
+        }
+        .audio-room-list li {
+            font-size: 1.1rem;
+            margin-bottom: 1.8rem;
+            letter-spacing: 2px;
+        }
+
+        .audio-room-controls {
+            width: 100%;
+            max-width: 450px; 
+        }
+
+        .audio-room-progress {
+            position: relative;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+        .audio-room-progress::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #e0e0e0;
+        }
+        .audio-room-progress-bar {
+            position: absolute;
+            height: 2px;
+            background-color: #000;
+            width: 0%;
+            pointer-events: none;
+            transition: width 0.1s linear;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>archive/архив</h1>
+        <p>registro documentario dei testi e delle traduzioni</p>
+        
+        <nav class="nav-indice">
+            <ul>
+                <li><a href="index.html">INDICE</a></li>
+                <li><a href="audio.html">AUDIO</a></li>
+                <li><a href="aboutproject.html">ABOUT PROJECT</a></li>
+                <li><a href="contact.html">JOIN THE PROJECT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="audio-room-container">
+        
+        <div class="audio-room-title">registro sonoro</div>
+        
+        <ul id="audio-tracklist" class="global-list audio-room-list">
+            <li data-src="assets/ambient-index.mp3" class="active-track">rec. 01 / voices in the silence</li>
+            <li data-src="assets/ambient1.mp3">rec. 02 / awareness of the moment</li>
+            <li data-src="assets/ambient5.mp3">rec. 03 / windborne omen</li>
+            <li data-src="assets/ambient6.mp3">rec. 04 / judgment hour</li>
+            <li data-src="assets/ambient4.mp3">rec. 05 / epitaph</li>
+        </ul>
+
+        <div class="audio-room-controls">
+            
+            <div id="progress-container" class="audio-room-progress">
+                <div id="progress-bar" class="audio-room-progress-bar"></div>
+            </div>
+
+            <div class="global-controls" style="margin-bottom: 0;">
+                <span id="play-pause-btn" class="control-btn">play</span>
+                
+                <div class="time-display">
+                    <span id="time-current">00:00</span> / <span id="time-total">00:00</span>
+                </div>
+                
+                <div class="volume-control">
+                    <span class="vol-label">vol</span>
+                    <div class="volume-slider" id="volume-slider">
+                        <div class="volume-level" id="volume-level"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 — PERSONAL ARCHIVE OF ARTEMIJ GORYNIN - ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <audio id="archive-audio">
+        <source src="assets/ambient-index.mp3" type="audio/mpeg"> 
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

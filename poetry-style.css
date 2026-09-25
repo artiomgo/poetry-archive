@@ -144,7 +144,7 @@ main {
 .poem-line {
     font-family: 'Lora', serif; 
     font-size: 1.15rem; 
-    line-height: 2.2;
+    line-height: 2.2;,mkkl
     color: #110606;
     margin: 0;
     font-weight: 550; 
@@ -235,7 +235,7 @@ main {
 .archive-index {
     list-style-type: none;
     padding: 0;
-    margin-top: 8rem;
+    margin-top: 2rem;
 }
 
 .archive-item {
@@ -636,4 +636,95 @@ footer {
     width: 100%;
     justify-content: center;
     margin-bottom: 2.5rem;
+}
+
+.about-section {
+    width: 90%;
+    max-width: 1400px;
+    margin: 6rem auto;
+    font-family: sans-serif; 
+}
+
+.manifesto-block,
+.contact-block {
+    margin-top: 8vh; 
+    margin-bottom: 10vh;
+    padding-left: 4rem;  
+    padding-right: 4rem; 
+    box-sizing: border-box;
+}
+.manifesto-block .poem-line,
+.contact-block .poem-line {
+    font-family: 'Akt' sans-serif; 
+    font-size: 1.05rem;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    color: #1a1a1a;
+    margin-bottom: 0.3rem;
+    font-weight: 300;
+}
+
+.manifesto-block .stanza-break,
+.contact-block .stanza-break {
+    height: 1.8rem; 
+}
+
+.manifesto-block strong,
+.contact-block strong {
+    font-weight: 700 !important; 
+    color: #000000 !important; 
+    letter-spacing: 0.05em;
+    font-size: 0.95em;
+}
+
+.manifesto-block a,
+.contact-block a {
+    color: #1a1a1a !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid #1a1a1a !important;
+    padding-bottom: 2px !important;
+    font-style: italic !important;
+    transition: all 0.3s ease !important;
+}
+
+.manifesto-block a:hover,
+.contact-block a:hover {
+    color: #888 !important;
+    border-bottom-color: #888 !important;
+}
+.email-btn-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+}
+
+.global-email-btn {
+    display: inline-block;
+    font-family: 'Akt', sans-serif; 
+    font-size: 1.2rem; 
+    font-weight: 400;
+    letter-spacing: 3px; 
+    color: #000000;
+    text-decoration: none;
+    padding-bottom: 8px; 
+    border-bottom: 1px solid transparent; 
+    transition: all 0.4s ease; 
+}
+
+
+.global-email-btn:hover {
+    color: #666666; 
+    border-bottom: 1px solid #666666; 
+}
+.page-heading {
+    text-align: center;
+    width: 100%;
+    margin-top: 8vh;
+    margin-bottom: 4rem;
+    font-family: 'Prata', serif; /* Используем элегантный шрифт с засечками */
+    font-weight: 400; /* Одинаковая толщина */
+    font-size: 1.6rem; /* Идеальный размер, подбери если нужен больше/меньше */
+    letter-spacing: 0.1em;
+    color: #000000;
 }
