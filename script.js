@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (audioBarToggle && globalAudioBar) {
             audioBarToggle.addEventListener('click', (e) => {
                 if (e.target.closest('#progress-container')) return; 
-                e.stopPropagation(); // Убиваем двойной клик браузера
+                e.stopPropagation();
                 
                 if (globalAudioBar.classList.contains('expanded')) {
                     globalAudioBar.classList.remove('expanded');
